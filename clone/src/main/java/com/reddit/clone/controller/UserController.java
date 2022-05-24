@@ -8,16 +8,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/user") //pre path for all methods
+@RequestMapping("api/user")
 public class UserController
 {
     @Autowired
     private IUserService userService;
 
     @PostMapping
-    public ResponseEntity<?> saveUser(@RequestBody User user)//this should be dto object
+    public ResponseEntity<?> saveUser(@RequestBody User user)
     {
         return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
+    }
+
+    @PatchMapping
+    public ResponseEntity<?> updateUser(@RequestBody User user)
+    {
+        return  new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
     }
 
     @GetMapping

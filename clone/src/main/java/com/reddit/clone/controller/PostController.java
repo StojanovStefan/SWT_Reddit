@@ -15,9 +15,15 @@ public class PostController
     private IPostService postService;
 
     @PostMapping
-    public ResponseEntity<?> savePost(@RequestBody Post post)//this should be dto object
+    public ResponseEntity<?> savePost(@RequestBody Post post)
     {
         return new ResponseEntity<>(postService.savePost(post), HttpStatus.CREATED);
+    }
+
+    @PatchMapping
+    public ResponseEntity<?> updatePost(@RequestBody Post post)
+    {
+        return  new ResponseEntity<>(postService.savePost(post), HttpStatus.CREATED);
     }
 
     @GetMapping

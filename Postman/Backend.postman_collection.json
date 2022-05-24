@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "06910278-f250-49f7-bcce-7d1a54b70e87",
+		"name": "Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20796361"
+	},
+	"item": [
+		{
+			"name": "GET Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"userId\": 3,\r\n        \"username\": \"IZmenaadenko\",\r\n        \"password\": \"sarenko\",\r\n        \"email\": \"mladen@gmail.com\",\r\n        \"avatar\": \"mladenov avatar\",\r\n        \"registrationData\": \"2020-05-18\",\r\n        \"description\": \"opis Mladenov\",\r\n        \"displayName\": \"MladenS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Users",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"userId\": 3,\r\n        \"username\": \"Madenko\",\r\n        \"password\": \"SarenkoIZMENASIFRE\",\r\n        \"email\": \"mladen@gmail.com\",\r\n        \"avatar\": \"mladenov avatar\",\r\n        \"registrationData\": \"2022-05-18\",\r\n        \"description\": \"opis Mladenov\",\r\n        \"displayName\": \"MladenS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Posts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postId\": 3,\r\n    \"title\": \"NaslovPosta3\",\r\n    \"text\": \"TextPosta3\",\r\n    \"creationData\": \"2022-03-15\",\r\n    \"imagePath\": \"putanjaslike3/\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Posts",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"postId\": 1,\r\n    \"title\": \"NaslovPosta\",\r\n    \"text\": \"TextPosta\",\r\n    \"creationData\": \"2022-03-15\",\r\n    \"imagePath\": \"putanjaslike1/\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Communities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/community",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"community"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Community",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"communityId\": 3,\r\n    \"name\": \"Izmena\",\r\n    \"description\": \"opsis3\",\r\n    \"creationData\": \"2022-10-20\",\r\n    \"suspended\": true,\r\n    \"suspendedReason\": \"razlog suspenzije\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/community",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"community"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Communities",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"communityId\": 3,\r\n    \"name\": \"IzmenaIzmene\",\r\n    \"description\": \"opsis3\",\r\n    \"creationData\": \"2021-10-20\",\r\n    \"suspended\": true,\r\n    \"suspendedReason\": \"razlog suspenzije\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/community",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"community"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

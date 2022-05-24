@@ -20,6 +20,12 @@ public class CommunityController
         return new ResponseEntity<>(communityService.saveCommunity(community), HttpStatus.CREATED);
     }
 
+    @PatchMapping
+    public ResponseEntity<?> updateCommunity(@RequestBody Community community)
+    {
+        return  new ResponseEntity<>(communityService.saveCommunity(community), HttpStatus.CREATED);
+    }
+
     @GetMapping
     public ResponseEntity<?> getAllCommunities()
     {
