@@ -10,7 +10,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "api/login", method = RequestMethod.POST, consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+@RequestMapping(value = "api/login",  consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
 public class LoginController
 {
     @Autowired
@@ -18,7 +18,15 @@ public class LoginController
 
     @PostMapping
     public ResponseEntity<User> UserByUsername(@RequestBody MultiValueMap<String, String> formData) {
-        return new ResponseEntity<>(userService.findByUsername(formData.getFirst("username")), HttpStatus.CREATED);
+        User temp = userService.findByUsername(formData.getFirst("username"));
+        if(temp == null) {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
+        if(!temp.getPassword().equals(formData.getFirst("password"))) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(temp, HttpStatus.OK);
+
     }
 
 }

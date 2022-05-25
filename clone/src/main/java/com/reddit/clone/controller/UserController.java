@@ -14,12 +14,6 @@ public class UserController
     @Autowired
     private IUserService userService;
 
-    @PostMapping
-    public ResponseEntity<?> saveUser(@RequestBody User user)
-    {
-        return new ResponseEntity<>(userService.saveUser(user), HttpStatus.CREATED);
-    }
-
     @PatchMapping
     public ResponseEntity<?> updateUser(@RequestBody User user)
     {
