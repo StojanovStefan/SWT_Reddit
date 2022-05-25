@@ -8,5 +8,10 @@ public interface IUserService {
 
     User saveUser(User user);
 
+    User findByUsername(String username);
+
+    User findByPassword(String password);
+
     List<User> findAll();
+
 }

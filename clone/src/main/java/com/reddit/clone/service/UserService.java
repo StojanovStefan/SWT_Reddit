@@ -20,6 +20,18 @@ public class UserService implements IUserService
     }
 
     @Override
+    public User findByUsername(String username)
+    {
+        return userRepository.findByUsername(username).orElse(null);
+    }
+
+    @Override
+    public User findByPassword(String password)
+    {
+        return userRepository.findByPassword(password).orElse(null);
+    }
+
+    @Override
     public List<User> findAll()
     {
         return userRepository.findAll();
