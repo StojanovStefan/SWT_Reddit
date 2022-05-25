@@ -26,12 +26,6 @@ public class UserService implements IUserService
     }
 
     @Override
-    public User findByPassword(String password)
-    {
-        return userRepository.findByPassword(password).orElse(null);
-    }
-
-    @Override
     public List<User> findAll()
     {
         return userRepository.findAll();

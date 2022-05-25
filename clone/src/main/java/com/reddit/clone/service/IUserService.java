@@ -10,8 +10,6 @@ public interface IUserService {
 
     User findByUsername(String username);
 
-    User findByPassword(String password);
-
     List<User> findAll();
 
 }
