@@ -8,7 +8,7 @@ public class RedditCloneApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RedditCloneApplication.class, args);
-		System.out.println("Radi aaaaaaaaaaaaaaaaaaa");
+		System.out.println("Radi");
 	}
 
 }

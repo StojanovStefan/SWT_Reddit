@@ -17,7 +17,7 @@ public class LoginController
     private IUserService userService;
 
     @PostMapping
-    public ResponseEntity<User> UserByUsername(@RequestBody MultiValueMap<String, String> formData) {
+    public ResponseEntity<User> LoginUser(@RequestBody MultiValueMap<String, String> formData) {
         User temp = userService.findByUsername(formData.getFirst("username"));
         if(temp == null) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
