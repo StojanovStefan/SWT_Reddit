@@ -1,6 +1,9 @@
 package com.reddit.clone.controller;
 
-import com.reddit.clone.model.*;
+import com.reddit.clone.model.Community;
+import com.reddit.clone.model.Moderator;
+import com.reddit.clone.model.ModeratorId;
+import com.reddit.clone.model.User;
 import com.reddit.clone.repository.ICommunityRepository;
 import com.reddit.clone.repository.IModeratorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
-import java.util.Objects;
 import java.util.Optional;
 
 @CrossOrigin
@@ -65,8 +67,7 @@ public class CommunityController {
     @PutMapping("/{id}")
     public ResponseEntity<Community> updateCommunity(@PathVariable("id") Integer id, @RequestAttribute(value = "currentuser") User currentUser, @RequestBody Community community) {
         Optional<Moderator> mod = moderatorRepository.findById(new ModeratorId(currentUser.getId(), id));
-        if(mod.isPresent())
-        {
+        if (mod.isPresent()) {
             community.setId(id);
             communityRepository.save(community);
             return new ResponseEntity<>(community, HttpStatus.OK);

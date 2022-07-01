@@ -1,6 +1,5 @@
 package com.reddit.clone.controller;
 
-import com.reddit.clone.model.Post;
 import com.reddit.clone.model.Reaction;
 import com.reddit.clone.model.User;
 import com.reddit.clone.repository.IReactionRepository;
@@ -22,9 +21,8 @@ public class ReactionController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Reaction> deleteReaction(@PathVariable("id") Integer id, @RequestAttribute(value = "currentuser") User currentUser) {
         Optional<Reaction> reaction = reactionRepository.findById(id);
-        if(reaction.isPresent())
-        {
-            if(reaction.get().getUser().getId() == currentUser.getId()) {
+        if (reaction.isPresent()) {
+            if (reaction.get().getUser().getId() == currentUser.getId()) {
                 reactionRepository.deleteById(id);
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
@@ -83,9 +81,8 @@ public class ReactionController {
     @PutMapping("/{id}")
     public ResponseEntity<Reaction> updateReaction(@PathVariable("id") Integer id, @RequestAttribute(value = "currentuser") User currentUser, @RequestBody Reaction reaction) {
         Optional<Reaction> temp = reactionRepository.findById(id);
-        if(temp.isPresent())
-        {
-            if(Objects.equals(temp.get().getUser().getId(), currentUser.getId())) {
+        if (temp.isPresent()) {
+            if (Objects.equals(temp.get().getUser().getId(), currentUser.getId())) {
                 reaction.setId(id);
                 reactionRepository.save(reaction);
                 return new ResponseEntity<>(reaction, HttpStatus.OK);

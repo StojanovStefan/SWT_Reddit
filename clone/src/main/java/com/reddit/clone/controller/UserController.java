@@ -5,7 +5,6 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.reddit.clone.model.Reaction;
 import com.reddit.clone.model.User;
 import com.reddit.clone.repository.IUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +35,8 @@ public class UserController {
     @DeleteMapping("/{id}")
     public ResponseEntity<User> deleteUser(@PathVariable("id") Integer id, @RequestAttribute(value = "currentuser") User currentUser) {
         Optional<User> user = userRepository.findById(id);
-        if(user.isPresent())
-        {
-            if(Objects.equals(user.get().getId(), currentUser.getId())) {
+        if (user.isPresent()) {
+            if (Objects.equals(user.get().getId(), currentUser.getId())) {
                 userRepository.deleteById(id);
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
@@ -85,9 +83,8 @@ public class UserController {
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable("id") Integer id, @RequestAttribute(value = "currentuser") User currentUser, @RequestBody User user) {
         Optional<User> temp = userRepository.findById(id);
-        if(temp.isPresent())
-        {
-            if(Objects.equals(temp.get().getId(), currentUser.getId())) {
+        if (temp.isPresent()) {
+            if (Objects.equals(temp.get().getId(), currentUser.getId())) {
                 user.setId(id);
                 userRepository.save(user);
                 return new ResponseEntity<>(user, HttpStatus.OK);

@@ -21,9 +21,8 @@ public class PostController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Post> deletePost(@PathVariable("id") Integer id, @RequestAttribute(value = "currentuser") User currentUser) {
         Optional<Post> post = postRepository.findById(id);
-        if(post.isPresent())
-        {
-            if(post.get().getUser().getId() == currentUser.getId()) {
+        if (post.isPresent()) {
+            if (post.get().getUser().getId() == currentUser.getId()) {
                 postRepository.deleteById(id);
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
@@ -82,9 +81,8 @@ public class PostController {
     @PutMapping("/{id}")
     public ResponseEntity<Post> updatePost(@PathVariable("id") Integer id, @RequestAttribute(value = "currentuser") User currentUser, @RequestBody Post post) {
         Optional<Post> temp = postRepository.findById(id);
-        if(temp.isPresent())
-        {
-            if(Objects.equals(temp.get().getUser().getId(), currentUser.getId())) {
+        if (temp.isPresent()) {
+            if (Objects.equals(temp.get().getUser().getId(), currentUser.getId())) {
                 post.setId(id);
                 postRepository.save(post);
                 return new ResponseEntity<>(post, HttpStatus.OK);

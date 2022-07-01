@@ -1,6 +1,5 @@
 package com.reddit.clone.repository;
 
-import com.reddit.clone.model.Community;
 import com.reddit.clone.model.Moderator;
 import com.reddit.clone.model.ModeratorId;
 import org.springframework.data.jpa.repository.JpaRepository;
