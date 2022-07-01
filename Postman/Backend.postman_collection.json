@@ -1,331 +1,902 @@
 {
 	"info": {
-		"_postman_id": "06910278-f250-49f7-bcce-7d1a54b70e87",
-		"name": "Backend",
+		"_postman_id": "1612d765-34b8-4175-814a-3f5a0457440d",
+		"name": "SVT",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "20796361"
+		"_exporter_id": "8526902"
 	},
 	"item": [
 		{
-			"name": "GET Users",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/user",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"user"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Registration User",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n        \"userId\": 4,\r\n        \"username\": \"Hardy\",\r\n        \"password\": \"password123\",\r\n        \"email\": \"hardi@gmail.com\",\r\n        \"avatar\": \"Hardi avatar\",\r\n        \"registrationData\": \"2022-05-18\",\r\n        \"description\": \"opis Hardijev\",\r\n        \"displayName\": \"AHardy\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/registration",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"registration"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Users",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n        \"userId\": 3,\r\n        \"username\": \"Madenko\",\r\n        \"password\": \"SarenkoIZMENASIFRE\",\r\n        \"email\": \"mladen@gmail.com\",\r\n        \"avatar\": \"mladenov avatar\",\r\n        \"registrationData\": \"2022-05-18\",\r\n        \"description\": \"opis Mladenov\",\r\n        \"displayName\": \"MladenS\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/user",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"user"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET Posts",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/post",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"post"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add Post",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"postId\": 3,\r\n    \"title\": \"NaslovPosta3\",\r\n    \"text\": \"TextPosta3\",\r\n    \"creationData\": \"2022-03-15\",\r\n    \"imagePath\": \"putanjaslike3/\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/post",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"post"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Posts",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"postId\": 1,\r\n    \"title\": \"NaslovPosta\",\r\n    \"text\": \"TextPosta\",\r\n    \"creationData\": \"2022-03-15\",\r\n    \"imagePath\": \"putanjaslike1/\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/post",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"post"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "GET Communities",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/community",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"community"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Add Community",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"communityId\": 3,\r\n    \"name\": \"Izmena\",\r\n    \"description\": \"opsis3\",\r\n    \"creationData\": \"2022-10-20\",\r\n    \"suspended\": true,\r\n    \"suspendedReason\": \"razlog suspenzije\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/community",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"community"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Communities",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"communityId\": 3,\r\n    \"name\": \"IzmenaIzmene\",\r\n    \"description\": \"opsis3\",\r\n    \"creationData\": \"2021-10-20\",\r\n    \"suspended\": true,\r\n    \"suspendedReason\": \"razlog suspenzije\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/community",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"community"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST Login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
+			"name": "user",
+			"item": [
+				{
+					"name": "token",
+					"item": [
 						{
-							"key": "username",
-							"value": "sstojanov",
-							"type": "text"
+							"name": "New Request",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGVmYW4iLCJyb2xlcyI6IlJPTEVfVVNFUiIsImlzcyI6Ii9hcGkvbG9naW4iLCJleHAiOjE2NTY1MjIxNTR9.tZ4NBfI83k7aecnH90A2c-T4pi0nxX_efphOgYvUmQQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURI}}/user/token/refresh",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"user",
+										"token",
+										"refresh"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "login",
+					"item": [
+						{
+							"name": "loginUser",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "username",
+											"value": "stefan",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "stefan2022",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURI}}/login",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "{{id}}",
+					"item": [
+						{
+							"name": "getUserById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/user/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
 						},
 						{
-							"key": "password",
-							"value": "stefan1",
-							"type": "text"
+							"name": "putUserById",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"displayName\": \"Sandra Stojanov\",\n    \"username\": \"sandralexis\",\n    \"password\": \"sandra2022\",\n    \"email\": \"sandra@gmail.com\",\n    \"avatar\": \"nije naveden\",\n    \"registrationDate\": \"2022-06-28T00:14:15.000+00:00\",\n    \"description\": \"Veb programer\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURI}}/user/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteUserById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/user/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
-				"url": {
-					"raw": "http://localhost:8080/api/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"login"
+				{
+					"name": "username/{{username}}",
+					"item": [
+						{
+							"name": "getUserByUsername",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/user/username/:username",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"user",
+										"username",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "stefan"
+										}
+									]
+								}
+							},
+							"response": []
+						}
 					]
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURI}}/user",
+							"host": [
+								"{{baseURI}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"displayName\": \"Sandra Stojanov\",\n    \"username\": \"sandra\",\n    \"password\": \"sandra2022\",\n    \"email\": \"sandra@gmail.com\",\n    \"avatar\": \"nije naveden\",\n    \"description\": \"Veb programer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURI}}/user",
+							"host": [
+								"{{baseURI}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "POST Change password",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
+			"name": "community",
+			"item": [
+				{
+					"name": "{{id}}",
+					"item": [
 						{
-							"key": "password",
-							"value": "stefan1",
-							"type": "text"
+							"name": "getCommunityById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/community/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"community",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
 						},
 						{
-							"key": "newpassword",
-							"value": "stefan22",
-							"type": "text"
+							"name": "putCommunityById",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 1,\n    \"name\": \"programeri\",\n    \"description\": \"Svi mi koji volimo jako da programiramo\",\n    \"creationDate\": \"2022-06-27T20:31:58.000+00:00\",\n    \"isSuspended\": false,\n    \"suspendedReason\": null\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURI}}/community/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"community",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
 						},
 						{
-							"key": "username",
-							"value": "sstojanov",
-							"type": "text"
+							"name": "deleteCommunityById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/community/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"community",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
-				"url": {
-					"raw": "http://localhost:8080/api/change_password",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"change_password"
+				{
+					"name": "name/{{name}}",
+					"item": [
+						{
+							"name": "getCommunityByName",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/community/name/:name",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"community",
+										"name",
+										":name"
+									],
+									"variable": [
+										{
+											"key": "name",
+											"value": "program"
+										}
+									]
+								}
+							},
+							"response": []
+						}
 					]
+				},
+				{
+					"name": "getAllCommunity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURI}}/community",
+							"host": [
+								"{{baseURI}}"
+							],
+							"path": [
+								"community"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postCommunity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Hlebari\",\n    \"description\": \"Svi mi koji volimo jako da dzabalebarimo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURI}}/community",
+							"host": [
+								"{{baseURI}}"
+							],
+							"path": [
+								"community"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "reaction",
+			"item": [
+				{
+					"name": "{{id}}",
+					"item": [
+						{
+							"name": "getReactionById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/reaction/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"reaction",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "putReactionById",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"id\": 2\n    },\n    \"post\": {\n        \"id\": 1\n    },\n    \"type\": \"LIKE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURI}}/reaction/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"reaction",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteReactionById",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/reaction/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"reaction",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "username/{{username}}",
+					"item": [
+						{
+							"name": "getReactionByUsername",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/reaction/username/:username",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"reaction",
+										"username",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "ivajos"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user/{{userId}}",
+					"item": [
+						{
+							"name": "getReactionByUserId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/reaction/user/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"reaction",
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "post/{{postId}}",
+					"item": [
+						{
+							"name": "getReactionByPostd",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/reaction/post/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"reaction",
+										"post",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "getAllReaction",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURI}}/reaction",
+							"host": [
+								"{{baseURI}}"
+							],
+							"path": [
+								"reaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postReaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"id\": 2\n    },\n    \"post\": {\n        \"id\": 1\n    },\n    \"type\": \"LIKE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURI}}/reaction",
+							"host": [
+								"{{baseURI}}"
+							],
+							"path": [
+								"reaction"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "{{id}}",
+					"item": [
+						{
+							"name": "getPostById",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/post/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"post",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "putPostById",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": {\n        \"id\": 2\n    },\n    \"community\": {\n        \"id\": 1\n    },\n    \"title\": \"Druga objava xd!\",\n    \"text\": \"Dobrodošli u naš mali kutak 2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURI}}/post/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"post",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deletePostById",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGVmYW4iLCJyb2xlcyI6IlJPTEVfVVNFUiIsImlzcyI6Ii9hcGkvbG9naW4iLCJleHAiOjE2NTY2MjAwODV9.L7GZQVpEktshg7V2OzdTbltBhguI-J_2Xas1AfI01qU",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURI}}/post/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"post",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "username/{{username}}",
+					"item": [
+						{
+							"name": "getPostByUsername",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/post/username/:username",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"post",
+										"username",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "stefan"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user/{{userId}}",
+					"item": [
+						{
+							"name": "getPostByUserId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/post/user/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"post",
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "community/{{communityId}}",
+					"item": [
+						{
+							"name": "getPostByCommunityId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURI}}/post/community/:id",
+									"host": [
+										"{{baseURI}}"
+									],
+									"path": [
+										"post",
+										"community",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "getAllPost",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURI}}/post",
+							"host": [
+								"{{baseURI}}"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "postPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGVmYW4iLCJyb2xlcyI6IlJPTEVfVVNFUiIsImlzcyI6Ii9hcGkvbG9naW4iLCJleHAiOjE2NTY0Mzc1NTR9.oW5FoN5_WzAdtJ5FuiJNTy7G94oBMdLDXlWo2k76eVE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": {\n        \"id\": 1\n    },\n    \"community\": {\n        \"id\": 1\n    },\n    \"title\": \"Treca objava!\",\n    \"text\": \"Dobrodošli u naš mali kutak 3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURI}}/post",
+							"host": [
+								"{{baseURI}}"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURI",
+			"value": "http://localhost:8080/api",
+			"type": "string"
 		}
 	]
 }

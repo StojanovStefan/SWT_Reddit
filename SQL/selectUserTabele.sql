@@ -1,1 +1,0 @@
-select * from svt_baza.post
