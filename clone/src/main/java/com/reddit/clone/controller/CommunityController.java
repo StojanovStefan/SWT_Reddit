@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 import java.util.Optional;
 
-@CrossOrigin
+@CrossOrigin(origins = {"*"})
 @RestController
 @RequestMapping("api/community")
 public class CommunityController {
@@ -55,10 +55,11 @@ public class CommunityController {
     }
 
     @PostMapping
-    public ResponseEntity<Community> insertCommunity(@RequestBody Community community) {
+    public ResponseEntity<Community> insertCommunity(@RequestBody Community community, @RequestAttribute(value = "currentuser") User currentUser) {
         if (community.getId() == null || community.getId() == 0) {
             community.setId(null);
             Community temp = communityRepository.save(community);
+            moderatorRepository.save(new Moderator(new ModeratorId(currentUser.getId(), temp.getId()), currentUser, temp));
             return new ResponseEntity<>(temp, HttpStatus.CREATED);
         }
         return new ResponseEntity<>(HttpStatus.CONFLICT);

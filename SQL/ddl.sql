@@ -28,27 +28,27 @@ CREATE TABLE SVT_Baza.Moderator (
 	user_id int,
     community_id int,
     PRIMARY KEY (user_id, community_id),
-    CONSTRAINT FOREIGN KEY (community_id) REFERENCES Community(community_id),
-    CONSTRAINT FOREIGN KEY (user_id) REFERENCES User(user_id)
+    CONSTRAINT FOREIGN KEY (community_id) REFERENCES Community(community_id) ON DELETE CASCADE,
+    CONSTRAINT FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS SVT_Baza.Administrator;
 CREATE TABLE SVT_Baza.Administrator (
 	user_id int PRIMARY KEY,
-	CONSTRAINT FOREIGN KEY (user_id) REFERENCES User(user_id)
+	CONSTRAINT FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS SVT_Baza.Post;
 CREATE TABLE SVT_Baza.Post (
 	post_id int AUTO_INCREMENT PRIMARY KEY,
-	user_id int NOT NULL,
+	user_id int,
 	community_id int NOT NULL,
     title nvarchar(100) DEFAULT NULL,
     text nvarchar(200) DEFAULT NULL,
     creation_date datetime DEFAULT NOW(),
     image_path nvarchar(200) DEFAULT NULL,
-    CONSTRAINT FOREIGN KEY (user_id) REFERENCES User(user_id),
-    CONSTRAINT FOREIGN KEY (community_id) REFERENCES Community(community_id)
+    CONSTRAINT FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE SET NULL,
+    CONSTRAINT FOREIGN KEY (community_id) REFERENCES Community(community_id) ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS SVT_Baza.Reaction;
@@ -58,7 +58,8 @@ CREATE TABLE SVT_Baza.Reaction (
     post_id int NOT NULL,
 	type varchar(8) NOT NULL DEFAULT 'LIKE',
 	timestamp datetime DEFAULT NOW(),
-	CONSTRAINT FOREIGN KEY (user_id) REFERENCES SVT_Baza.User(user_id),
-	CONSTRAINT FOREIGN KEY (post_id) REFERENCES SVT_Baza.Post(post_id),
+	CONSTRAINT UNIQUE (user_id, post_id),
+	CONSTRAINT FOREIGN KEY (user_id) REFERENCES SVT_Baza.User(user_id) ON DELETE CASCADE,
+	CONSTRAINT FOREIGN KEY (post_id) REFERENCES SVT_Baza.Post(post_id) ON DELETE CASCADE,
     CONSTRAINT CK_REACTION_VALID_TYPE CHECK (type = 'LIKE' OR type = 'DISLIKE')
 );

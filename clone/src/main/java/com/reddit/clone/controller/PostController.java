@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/post")
+@CrossOrigin(origins = {"*"})
 public class PostController {
     @Autowired
     private IPostRepository postRepository;
@@ -22,7 +23,7 @@ public class PostController {
     public ResponseEntity<Post> deletePost(@PathVariable("id") Integer id, @RequestAttribute(value = "currentuser") User currentUser) {
         Optional<Post> post = postRepository.findById(id);
         if (post.isPresent()) {
-            if (post.get().getUser().getId() == currentUser.getId()) {
+            if (Objects.equals(post.get().getUser().getId(), currentUser.getId())) {
                 postRepository.deleteById(id);
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }

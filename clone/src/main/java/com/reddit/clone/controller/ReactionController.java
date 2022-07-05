@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/reaction")
+@CrossOrigin(origins = {"*"})
 public class ReactionController {
     @Autowired
     private IReactionRepository reactionRepository;

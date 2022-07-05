@@ -281,7 +281,13 @@
 							"name": "putCommunityById",
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGVmYW4iLCJyb2xlcyI6IlJPTEVfVVNFUiIsImlzcyI6Ii9hcGkvbG9naW4iLCJleHAiOjE2NTY3MDk5NTJ9.zpNkf18bzYV5ghVeMAuaqqjRuO9eR3utUgheWaVCOwk",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\n    \"id\": 1,\n    \"name\": \"programeri\",\n    \"description\": \"Svi mi koji volimo jako da programiramo\",\n    \"creationDate\": \"2022-06-27T20:31:58.000+00:00\",\n    \"isSuspended\": false,\n    \"suspendedReason\": null\n}",
@@ -314,7 +320,13 @@
 							"name": "deleteCommunityById",
 							"request": {
 								"method": "DELETE",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearier eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGVmYW4iLCJyb2xlcyI6IlJPTEVfVVNFUiIsImlzcyI6Ii9hcGkvbG9naW4iLCJleHAiOjE2NTY3MDk1Mjd9.dS8Gl7ZhiYxGv_hIdhTH8AKOj4D_Y6h-sH-qwbasmlA",
+										"type": "text"
+									}
+								],
 								"url": {
 									"raw": "{{baseURI}}/community/:id",
 									"host": [
@@ -327,7 +339,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "2"
+											"value": "1"
 										}
 									]
 								}
@@ -611,10 +623,16 @@
 					"name": "postReaction",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGVmYW4iLCJyb2xlcyI6IlJPTEVfVVNFUiIsImlzcyI6Ii9hcGkvbG9naW4iLCJleHAiOjE2NTY5NjgzODl9.FClXm_28_1B4Q8ejl32EqLmmfANFMNyJTeAXV9AACNw",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user\": {\n        \"id\": 2\n    },\n    \"post\": {\n        \"id\": 1\n    },\n    \"type\": \"LIKE\"\n}",
+							"raw": "{\n    \"user\": {\n        \"id\": 1\n    },\n    \"post\": {\n        \"id\": 3\n    },\n    \"type\": \"LIKE\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -669,10 +687,16 @@
 							"name": "putPostById",
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGVmYW4iLCJyb2xlcyI6IlJPTEVfVVNFUiIsImlzcyI6Ii9hcGkvbG9naW4iLCJleHAiOjE2NTY3MDk5NTJ9.zpNkf18bzYV5ghVeMAuaqqjRuO9eR3utUgheWaVCOwk",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"user\": {\n        \"id\": 2\n    },\n    \"community\": {\n        \"id\": 1\n    },\n    \"title\": \"Druga objava xd!\",\n    \"text\": \"Dobrodošli u naš mali kutak 2\"\n}",
+									"raw": "{\n    \"user\": {\n        \"id\": 1\n    },\n    \"community\": {\n        \"id\": 1\n    },\n    \"title\": \"Druga objava xd!\",\n    \"text\": \"Dobrodošli u naš mali kutak 2\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -691,7 +715,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "2"
+											"value": "1"
 										}
 									]
 								}
@@ -844,13 +868,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGVmYW4iLCJyb2xlcyI6IlJPTEVfVVNFUiIsImlzcyI6Ii9hcGkvbG9naW4iLCJleHAiOjE2NTY0Mzc1NTR9.oW5FoN5_WzAdtJ5FuiJNTy7G94oBMdLDXlWo2k76eVE",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdGVmYW4iLCJyb2xlcyI6IlJPTEVfVVNFUiIsImlzcyI6Ii9hcGkvbG9naW4iLCJleHAiOjE2NTY5NTg4NzJ9.jVVgcULi2P-DCGYdUFPWOcoqc7Gf51SP1n7WBV68Cjc",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user\": {\n        \"id\": 1\n    },\n    \"community\": {\n        \"id\": 1\n    },\n    \"title\": \"Treca objava!\",\n    \"text\": \"Dobrodošli u naš mali kutak 3\"\n}",
+							"raw": "{\n    \"user\": {\n        \"id\": 1\n    },\n    \"community\": {\n        \"id\": 1\n    },\n    \"title\": \"Pozdrav iz Sutomora\",\n    \"text\": \"Sutomore se može podjeliti na tri dijela: Polje gdje živi veći dio žitelja koje je smješteno na istočnom dijelu Spičanskog polja\",\n    \"imagePath\" : \"https://slika.nezavisne.rs/2018/07/750x450/20180706150257_486976.jpg\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -870,6 +894,14 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	],
 	"event": [

@@ -1,10 +1,14 @@
 package com.reddit.clone.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "Moderator")
 @JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"})
 public class Moderator {

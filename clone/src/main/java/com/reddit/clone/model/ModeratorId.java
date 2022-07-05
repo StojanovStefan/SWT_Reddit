@@ -1,6 +1,7 @@
 package com.reddit.clone.model;
 
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.hibernate.Hibernate;
 
 import javax.persistence.Column;
@@ -10,6 +11,7 @@ import java.util.Objects;
 
 @Embeddable
 @AllArgsConstructor
+@NoArgsConstructor
 public class ModeratorId implements Serializable {
     private static final long serialVersionUID = 5896125692256265148L;
     @Column(name = "user_id", nullable = false)

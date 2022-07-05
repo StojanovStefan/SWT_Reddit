@@ -26,6 +26,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
 @RequestMapping("api/user")
+@CrossOrigin(origins = {"*"})
 public class UserController {
     @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -86,6 +87,7 @@ public class UserController {
         if (temp.isPresent()) {
             if (Objects.equals(temp.get().getId(), currentUser.getId())) {
                 user.setId(id);
+                user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
                 userRepository.save(user);
                 return new ResponseEntity<>(user, HttpStatus.OK);
             }

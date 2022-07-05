@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1,
+.h1 {
+  @apply text-2xl font-bold;
+}
+h2,
+.h2 {
+  @apply text-xl font-bold;
+}
+
+button,
+.btn {
+  @apply bg-slate-500 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded inline-block border border-transparent;
+}
+button:disabled {
+  @apply bg-transparent text-slate-500 border border-slate-500;
+}
+button:disabled.red {
+  @apply bg-transparent text-red-500 border border-red-500;
+}
+button:disabled.blue {
+  @apply bg-transparent text-blue-500 border border-blue-500;
+}
+
+.red {
+  @apply bg-red-500 hover:bg-red-700;
+}
+
+.blue {
+  @apply bg-blue-500 hover:bg-blue-700;
+}
+
+form {
+  @apply flex flex-col max-w-lg m-auto gap-4;
+}
+input,
+textarea {
+  @apply border-2 border-gray-300 rounded-lg p-2;
+}
